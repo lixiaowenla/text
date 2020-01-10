@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <div id="app">  <!--  挂在元素 -->
+        {{msg}} <!--  展示,用花括号表示 -->
+    </div>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+     let lixiaowen= new Vue({
+          el:"#app", //挂载元素 app
+          data:{
+            msg:"很开心，你又开始学习啦，接着加油啊"
+          }
+      })
+
+      lixiaowen.msg="lixiaowen2020会越来越好"
+
+
+      
+    </script>
+</body>
+</html>
