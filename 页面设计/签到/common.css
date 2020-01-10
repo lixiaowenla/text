@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none；
+}
+a{
+    text-decoration: none;
+}
+input{
+    border:none
+}
+body{
+    font-size:0;
+    width: 7.5rem;
+    height: 14.9rem;
+    background: #EEEEEE;
+}

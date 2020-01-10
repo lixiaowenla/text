@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        
+    </div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./browser.min.js"></script>
+
+
+    <script type="text/babel">
+        class Inputls extends React.Component{
+            constructor(props){
+                super(props);
+                this.add=this.add.bind(this)
+            }
+            add(){
+                if(this.myInput.value!=''){
+                console.log(this.myInput.value)
+                this.props.addFun(this.myInput.value)//接受到addFun方法，并且把传入的value值改为this.myInput.value
+                this.myInput.value=''//输入后自动清空
+                }
+            }
+            render(){
+                return  (
+                    <div>
+                        <input type="text" ref={input=>this.myInput=input}/>
+                        <button onClick={this.add}>add</button>    
+                    </div>
+                )
+                
+            }
+        }
+        class List extends React.Component{
+            render(){
+                return (
+                    <ul>
+                       { 
+                            this.props.todos.map((value,index)=>{
+                                return <li key={index}>{value}</li>
+                            })
+                        }
+                    </ul>
+                )
+            }
+        }
+        class Main extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    todos:[1,288,3]
+                }
+                this.addFun=this.addFun.bind(this)
+            }
+            // addFun(value){
+            //     let todos1=[...this.state.todos]
+            //     todos1.push(value)
+            //     this.setState({
+            //         todos1:this.state.todos
+            //     })
+            // }
+            addFun(value){
+                let todos=[...this.state.todos]
+                todos.push(value)
+                this.setState({
+                    todos
+                })
+            }
+
+            render(){
+                return <div>
+                        <h3>TO DO LIST</h3> 
+                        <Inputls addFun={this.addFun}/>,
+                        <List todos={this.state.todos}/>
+                        </div>
+            }
+        }
+
+    ReactDOM.render(
+        <Main/>,
+        document.getElementById('app')
+    )
+    
+    </script>
+</body>
+</html>

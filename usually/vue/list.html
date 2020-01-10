@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+            <div >是否需要额外付费设施?
+            <input v-model="isshow" type="checkbox" @click=delAll(item)>
+            </div>
+           
+            <ul  v-show='isshow'>
+                <li v-for="(item,index) in list" @click=add(item)> {{item.name}} ({{item.price}})  <input type="checkbox" v-model=" list1" :value='item'  ></li>
+            </ul>
+            <div>订单费用信息</div>
+            
+            <ul>
+                <li v-for="(item,index) in list1"   >{{item.name}} ({{item.price}})</li>
+            </ul>
+            <div>总金额：{{total()}}</div>
+    </div>
+
+
+
+
+        <script src="./vue.js"></script>
+        <script>
+            new Vue({
+                el:'#app',
+    
+                data:{
+                    list:[
+                    {
+                        name:'沙发',
+                        price:20,
+                    },
+                    {
+                        name:'电脑',
+                        price:20,
+                    },
+                    {
+                        name:'Wi-Fi',
+                        price:20,
+                    },
+                ],
+                  isshow:false,
+                  list1:[
+                      {
+                          name:'群里花园豪华型',
+                          price:400,
+                      }
+                  ],
+                },
+               
+                methods:{
+                   delAll(item){
+                       if(this.isshow){
+                        this.list1.splice(1)//删除了第一个也就把后面的删除了
+                       }
+                   },
+                    
+                    total(){
+                        let count=0
+                        this.list1.forEach(element => {
+                            count+=element.price;
+                        });
+                        return count;
+                    }
+                }
+            })
+        </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<style>
+    button{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .red{
+        color:red;
+    }
+</style>
+
+
+<body>
+    <div id='app'>
+       
+       <input type="text"  v-model='value' >
+       <button @click=add() >添加</button>
+       
+       <ul>
+           <li v-for="(item,index) in arr" >{{item}}
+                <button @click=del(index)>删除</button>
+           </li>
+    </ul>
+
+    </div>
+    
+    <script src="./vue.js"></script>
+    <script>
+        let a=new Vue({
+            el:'#app',
+            data:{
+                arr:[],
+                value:'',
+                index:'',
+                islogin:true,
+            },
+            methods:{
+                add(){
+                    this.arr.push(this.value),//追加元素
+                    this.value=''//这样input框自动清空
+                },
+                del(index){
+                    this.arr.splice(index,1)
+                }
+                
+            }
+        })
+    </script>
+    
+</body>
+</html>

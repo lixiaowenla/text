@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./reset.css">
+    <script src='./rem.js'> </script>
+</head>
+
+<body>
+    <div id='app'>
+    <header>
+        <p></p>
+        <div>积分明细</div>
+    </header>
+
+    <div class='bg'>
+        <img src="./bg2.png" alt="">
+        <p>1000</p>
+        <div class='coupon'>
+            <img src="./bg1.png" alt="">
+            <div class='bg_font'>
+                <div class='bg_font1'>积分换券</div>
+                <div class='bg_font2'>查看已兑换的券 ></div>
+            </div>
+
+
+            <div class='font'>
+                    <div class='font1'>￥</div>
+            
+                <div class='font2'>
+                    <div class='font21'>30元购物券</div>
+                    <div class='font22'>3000积分兑换</div>
+                    <div class='font22'>满30.01使用</div>
+                </div>
+                <div class='font3'>
+                    <div class='font31'>￥</div>
+                    <button  class='font32'>立即兑换</button>
+                </div>
+             </div>
+            </div>
+    </div>
+
+    <div class='detail'>
+        <div class="detail_font1">积分明细</div>
+        <div :class="['detail_font21',isChoose1?'bottom':'']"  @click='chang1()' >{{all}}</div>
+        <div :class="['detail_font22',isChoose2?'bottom':'']"   @click='chang2()'>{{income}}</div>
+        <div :class="['detail_font23',isChoose3?'bottom':'']"   @click='chang3()'>{{pay}}</div>  
+        <div class="detail_font2">
+
+
+            <div class='all'>
+           
+                <div class='all_font'   @click='chang1()' v-show=' isChoose1' v-for="(item,index) in [...list,...arr]">
+                    <div class='all_font1'>
+                        <div class='all_font112'>
+                            <div class='all_font11' >{{item.income1}} {{item.pay1}}</div>
+                            <div class='all_font12'>{{item.income2}} {{item.pay2}}</div>
+                         </div>
+                        <div class='all_font13'>{{item.income3}} {{item.pay3}}</div>
+                    </div>
+                    <div class="all_bottom"></div>
+                </div>
+            </div>
+            
+
+
+            <div class='income'>
+           
+            <div class='all_font'   @click='chang2()' v-show='isChoose2' v-for="(item,index) in list">
+                    <div class='all_font1'>
+                        <div class='all_font112'>
+                            <div class='all_font11' >{{item.income1}}</div>
+                            <div class='all_font12'>{{item.income2}}</div>
+                         </div>
+                        <div class='all_font13'>{{item.income3}}</div>
+                    </div>
+                    <div class="all_bottom"></div>
+                </div>
+            </div>
+                
+
+             <div class='pay'>
+           
+            <div class='all_font'>
+                    <div class='all_font1' @click='chang3()' v-show='isChoose3' v-for="(item,index) in arr">
+                        <div class='all_font112'>
+                            <div class='all_font11'>{{item.pay1}}</div>
+                            <div class='all_font12'>{{item.pay2}}</div>
+                         </div>
+                        <div class='all_font13'>{{item.pay3}}</div> 
+                    </div>
+                    <div class="all_bottom"></div>   
+                   
+             </div>
+         </div>   
+</div>
+
+
+
+<script src="./vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+           isChoose1:true,
+           isChoose2:false,
+           isChoose3:false,
+           all:'全部',
+           income:'收入',
+           pay:'支出',
+           list:[
+               {
+                income1:'签到1',
+                income2:'签到送积分2019.07.08',
+                income3:'+10',
+                },
+                {
+                    income1:'签到3',
+                    income2:'签到送积分2019.07.08',
+                    income3:'+10',
+                },
+                {
+                    income1:'签到4',
+                    income2:'签到送积分2019.07.08',
+                    income3:'+10',
+                },
+           ],
+           arr:[
+           {
+                pay1:'签到4',
+                pay2:'签到送积分2019.07.08',
+                pay3:'-10',
+                },
+                {
+                    pay1:'签到5',
+                    pay2:'签到送积分2019.07.08',
+                    pay3:'-10',
+                },
+                {
+                    pay1:'签到6',
+                    pay2:'签到送积分2019.07.08',
+                    pay3:'-10',
+                },
+           ]
+           
+        },
+        methods:{
+                chang1(){
+                this.isChoose1=true,
+                this.isChoose2=false,
+                 this.isChoose3=false
+                },
+                chang2(){
+                    this.isChoose1=false,
+                    this.isChoose2=true,
+                    this.isChoose3=false
+                },
+                chang3(){
+                    this.isChoose1=false,
+                    this.isChoose2=false,
+                    this.isChoose3=true
+                },
+
+
+
+            },
+       
+
+        })
+    
+    
+</script>
+</body>
+</html>

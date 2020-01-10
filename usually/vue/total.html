@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0 ;
+        padding: 0;
+    }
+ 
+    #app{
+        width:400px;
+        margin:100px auto;
+    }
+    .list{
+       margin-top:10px;
+        width:200px;
+        height:20px;
+        background: pink;
+    }
+    .list_name{
+        float:left;
+    }
+    .list_price{
+        float:right;
+    }
+   
+    .total{
+        margin: 0 auto;
+    }
+    .change1{
+      background: blueviolet;
+  }
+</style>
+
+
+    
+
+<body>
+
+
+        <div id='app'>
+                <div class='shopping'>商品列表</div>
+                <ul>
+                    <li :class='["list", item.islogin ? "list" : "change1" ]' v-for="(item,index) in list" @click=change(item) >
+                        <p class='list_name' >{{item.name}}</p>
+                        <p class='list_price' >{{item.price}}</p>
+                    </li>
+                </ul>
+                <div class='total'>total:{{sum}}</div>
+            </div>
+
+
+
+        <script src="./vue.js"></script>
+        <script>
+         new Vue({
+             el:'#app',
+             data:{
+                 list:[
+                     {
+                         name:'衣服',
+                         price:200,
+                         islogin:true,
+                     },
+                     {
+                         name:'裤子',
+                         price:250,
+                          islogin:true,
+                     },
+                     {
+                         name:'鞋',
+                         price:20,
+                         islogin:true,
+                     },
+                     {
+                         name:'香水',
+                         price:200,
+                         islogin:true,
+                     },
+                ],
+                sum:0
+            },
+             methods:{
+                change(item){
+
+                   item.islogin=!item.islogin;
+                    if(item.islogin){
+                          this.sum-=item.price;
+                    }else
+                          this.sum+=item.price;
+                },
+                
+             }
+         })
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var person={
+          name:'xs',
+          age:'18',    
+          score:{
+            math:'100',
+            PE:'90',
+          }
+      }
+      function deepclone(obj){
+          var tmp=Array.isArray(obj)?[]:{};//数组
+          if(obj && typeof(obj[key]==='object')){
+          for(key in obj){
+              //判断obj子元素是否为对象，如果是，递归复制
+             if(typeof (obj[key])==='object')
+             {
+                  tmp[key]=deepclone(obj[key]);
+            }
+            else{
+                //如果不是简单复制
+                  tmp[key]=obj[key];
+              }
+          }
+          }else{
+          //非数组对象，直接用返回值
+                  temp=obj;
+              }
+          return tmp;}
+      var p=deepclone(person);
+      console.log(person);
+      console.log(p);
+
+      person.name='lixiaowen';
+      person.score.math='80';
+    </script>
+</body>
+</html>

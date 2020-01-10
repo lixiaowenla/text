@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str='00110011';
+
+        function matchString(s){
+            let j=s.match(/^(0+|1+)/)[0];//000
+            let k=(j[0]^1).toString().repeat(j.length);//111 匹配和j一样长的1 
+            let reg=new RegExp(`^(${j}${k})`);//"^000111"  j+k
+            if(reg.test(s)){
+                return RegExp.$1;
+            }else{
+                return "";
+            }
+        }
+
+        function fn(s){
+            let res=[];
+            for(let i=0;i<str.length;i++){
+                let r=matchString(s.slice(i));//slice返回数组中选取对象
+                if(r){
+                    res.push(r); //如果成功，则输出r
+                }
+            }
+            return res;
+        }
+        console.log(fn(str));
+        
+        
+    </script>
+</body>
+</html>

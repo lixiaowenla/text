@@ -1,0 +1,10 @@
+body{
+    color:red;
+    background: url(http://localhost:8089/images/3f5cf93752456fee926260546db927e7.jpg);
+}
+img{
+    transform: rotate(45deg); 
+}div {
+  color: yellow;
+  width: 100px;
+  height: 100px; }

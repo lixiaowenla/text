@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数据结构 栈问题 
+        function fn(arr){
+            let score=[];
+            let pre1;
+            let pre2;
+            arr.forEach(item => {
+                switch(item){
+                    case "C":
+                        score.pop();
+                        break;
+                    case "D":
+                        pre1=score.pop();
+                        score.push(pre1,pre1*2);
+                        break;
+                    case "+":
+                        pre1=score.pop();
+                        pre2=score.pop();
+                        score.push(pre2,pre1,pre1+pre2);
+                        break;
+                    default:
+                        score.push(item*1); //乘1 把字符串转化数字
+
+                }
+            });
+            //reduce 求和
+            return score.reduce((total,item)=>total+item);
+        }
+        console.log(fn(["5","2","C","D","+"]));
+        
+        
+    </script>
+</body>
+</html>

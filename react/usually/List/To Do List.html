@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .active{
+        background:red;
+    }
+</style>
+<body>
+    <div id='app'>
+
+    </div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./browser.min.js"></script>
+    <script type="text/babel">
+    class Search extends React.Component{
+        constructor(props){
+            super(props);
+            
+        }
+       
+        render(){
+            return(
+                <div>
+                <h4>搜索 <input type="text"  ref={input=>this.myInput1=input} /></h4>
+                </div>
+            )
+        }
+    }
+    class Add extends React.Component{
+        constructor(props){
+            super(props);
+            this.add=this.add.bind(this)
+        }
+        add(){
+            //console.log(this.myInput.value) 
+            if(this.myInput.value!=''){
+                this.props.addFun1(this.myInput.value)
+                this.myInput.value=''
+            }
+           
+        }
+        render(){
+            return(
+                <div>
+                <h4>添加:<input type='text' ref={input=>this.myInput=input}/>
+                <button onClick={this.add}>添加</button>
+                </h4>
+                </div>
+            )
+        }
+    }
+   
+   
+   
+    class List extends React.Component{
+        constructor(props){
+            super(props);
+           // this.change=this.change.bind(this)
+        }
+        // change(){
+        //     this.props.changeFun1()
+        // }
+        
+        render(){
+            return(
+                <ul>
+              {
+                    this.props.todos1.map((value,index)=>
+                    {
+                        return  (<li key={index} className={value.isActive?'active':''} >
+                                <input type="checkbox" defaultChecked={value.isActive?'checked':''} onClick={
+                                    ()=>{
+                                        this.props.changeFun1(index)
+                                    }
+                                }/>{value.name}
+                                <button onClick={
+                                    ()=>{this.props.delFun(index)}
+                                }>del</button>
+                                </li>)
+                    })
+                    
+                }
+            </ul>
+            )
+        }
+    }
+        class Main extends React.Component{
+             constructor(props){
+                 super(props);
+                this.state={
+                    todos:[
+                        {
+                            name:'1',
+                            isActive:true
+                        },
+                        {
+                            name:'2',
+                            isActive:false
+                        },
+                        {
+                            name:'3',
+                            isActive:false
+                        },
+                    ],
+                }
+                this.addFun=this.addFun.bind(this)
+                this.changeFun=this.changeFun.bind(this)
+                this.delFun=this.delFun.bind(this)
+             }
+            addFun(value){
+                let todos1=[...this.state.todos];
+                todos1.push({
+                    name:value,
+                    isActive:false
+                });
+                this.setState({
+                    todos:todos1
+                })
+            }
+            changeFun(index){
+                let todos1=[...this.state.todos];
+                todos1[index].isActive=!todos1[index].isActive
+                this.setState({
+                    todos:todos1
+                })                                                                                                                                                                                                     
+            }
+            delFun(index){
+                let todos1=[...this.state.todos];
+                todos1.splice(index,1)
+                this.setState({
+                    todos:todos1
+                })
+            }
+          
+            render(){
+                return (
+                    <div>
+                    <h1>To Do List</h1>
+                    <Search/>
+                    <Add addFun1={this.addFun}/>
+                    <List todos1={this.state.todos} changeFun1={this.changeFun} delFun={this.delFun}/>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main/>,
+            document.getElementById('app')
+        )
+
+    </script>
+</body>
+</html>

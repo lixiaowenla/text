@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        #app{
+            width:460px;
+            margin:100px auto;
+        }
+        .todolist_bottom{
+            width:460px;
+            height:2px;
+            border-top:black solid 1px;
+              
+        }
+        .list{
+            width:460px;
+            height:20px;
+            background:#9999;
+        }
+        .list_name{
+            float: left;
+            margin-left:10px;  
+        }
+        .list_price{
+            float:right;
+            margin-right:10px;
+        }
+    
+    </style>
+    
+
+
+<body>
+    <div id='app'>
+       
+            <div >todolist</div>
+            <div class='todolist_bottom' ></div>
+            <div>
+                名称 <input type="text" v-model="value">  
+                价格 <input type="text" v-model="price" >
+                <button @click=add()>添加</button>
+            </div>
+        
+             <div>
+                 <input type="text">
+                 <button>搜索</button>
+             </div>
+            
+             <ul  class='list'>
+                    <li class='list_name'  v-for="(item,index) in arr"> <input type="checkbox"  >{{item}} </li>
+                    <li class='list_price'  v-for="(item,index) in arr1"> {{item}}  X</li>
+            </ul>
+             
+           
+            <button class='select' @click='del()'>删除选中</button>
+            <div>总价：</div>
+        
+
+    </div>
+    
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                arr:[],
+                value:'',
+                arr1:[],
+                price:0,
+                isActive: false,
+                arrList: []
+               
+            },
+            methods:{
+                add(){
+                    this.arr.push(this.value),
+                    this.arr1.push(this.price)
+                },
+                del(index){
+                    this.arr.splice(index),
+                    this.arr1.splice(index)
+                }
+            }
+            
+
+
+            })
+        
+        
+    </script>
+    
+</body>
+</html>

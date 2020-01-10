@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding：0；
+        margin:0;
+    }
+    header,h4,footer{
+        width:960px;
+        height:80px;
+        margin:20px auto;/*页边距*/
+        font-size:20px;
+        /*文字居中，并且设置行高*/
+        text-align: center;
+        line-height:80px;
+        background:darkgrey;
+    }
+    @media(min-width:960px){
+        header,h4,footer{ width:100%;}
+}
+    }
+     @media (max-width:960px){
+    header,h4,footer{ width:100%;}
+}
+  /*不用单独设，因为他也是小于960px  
+  @media(max-width:460px){
+        header,h4,footer{
+     width:100%;
+        }
+    }*/
+       
+   
+   
+   
+       img{
+           display:none;
+           width:100%;
+       }
+     @media(min-width:960px){
+            .img2,.img3{
+                display:none;
+            }
+            img{
+                width:100%;
+                display:block;
+            }
+       }
+    @media (max-width:960px){
+       .img1,.img3{
+           display:none;
+       }
+    img{ 
+        width:100%;
+        display:block;
+    }
+}
+    @media(max-width:460px){
+        .img1,.img2{
+            display:none;
+        }
+        .img3{
+        width:100%;
+        display:block;
+        }
+    }
+
+
+
+
+        div{
+            width:
+        }
+</style>
+
+<body>
+    <header>页头</header>
+    <h4>标题</h4>
+    <img class='img1'  src="./01.jpg" alt="">
+    <img  class='img2' src="./01_s_2x.jpg" alt="">
+    <img  class='img3' src="./01_s.jpg" alt="">
+    <div>111111</div>
+    <div>22222</div>
+    <footer>页尾</footer>
+</body>
+</html>

@@ -1,0 +1,271 @@
+header{
+    display:flex;
+    width:3.75rem;
+    height: 0.645rem;
+    background: #FFFFFF;
+}
+input{
+    height:0.25rem;
+    width:3.3rem;
+    /*input框不用设置宽，直接设置高和display，就可以了*/
+    margin-left:0.1rem;
+    margin-top:0.3rem; 
+    border-radius: 0.125rem;
+    background: url(./search_icon.png) no-repeat #EEEEEE;/*搜索框以背景元素加入input框*/
+    background-size:0.15rem;/*改变背景图的大小*/
+    background-position:0.05rem,0.1rem,0.05rem;
+    padding-left: 0.35rem;/*给搜索二字加的内边距，相对于搜索框*/
+}
+header>img{
+    width:0.14rem;
+    height: 0.15rem;
+    margin-top:0.345rem;
+    margin-right:0.1rem;
+}
+
+
+/*直播中*/
+.broadcast{
+    position: relative;
+    font-size: 0;
+}
+.broadcast>img{
+    width:3.75rem;
+    height:1.95rem;
+}
+.broadcast>p{
+    width:0.5rem;
+    height: 0.2rem;
+    background-color: #E30025;
+    font-size:0.1rem;
+    color: #FFFFFF;
+    border-radius:0.025rem;
+    position: absolute;
+    top:0.15rem;
+    left:0.15rem;
+    text-align: center;
+    line-height: 0.2rem; 
+}
+
+
+
+
+/*选择*/
+.ye{
+    width:3.75rem;
+    height:1.64rem;
+    background:#FFFFFF;
+}
+
+.contain{
+   
+    display:flex;
+    justify-content: space-around;  
+
+}
+.contain img{
+        width:0.4rem;
+        height:0.4rem; 
+        margin-top: 0.1rem;
+}
+.explain{
+    display:flex;
+    justify-content: space-around; 
+  
+}
+.explain p{
+    font-size:0.1rem;
+}
+.ad{
+    width:3.55rem;
+    height:0.7rem;
+    margin-left:0.09rem;
+    margin-bottom: 0.2rem;
+}
+
+
+/*团购大全*/
+.shopping{
+    position: relative;
+}
+.shopping_top{
+    
+    width:3.75rem;
+    height:0.5rem;
+    margin-top:0.055rem; 
+    background:#FFFFFF url(./icon_shopping.png) no-repeat ;
+    background-size: 0.25rem;
+    background-position: 0.12rem,0.1rem,0.125rem ,2.4rem;
+    display: flex;
+}
+.shopping_font{
+    flex-grow:1;
+}
+.shopping_font1{
+    height:0.14rem;
+    font-size:0.14rem;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    margin-left: 0.45rem;
+    margin-top: 0.1rem;
+}
+.shopping_font2{
+    height:0.09rem;
+    font-size:0.09rem;
+    color:rgba(153,153,153,1);
+    margin-left:0.45rem;
+    margin-top:0.075rem;
+}
+.shopping_arrow{
+    border:0.01rem solid  #666666 ;
+    width: 0.09rem;
+    height:0.09rem;
+    border-left: transparent;
+    border-bottom: transparent;
+    transform: rotate(45deg);
+    margin-top:0.2rem;
+    margin-right:0.1rem;
+}
+
+/*团购大全下面的内容*/
+.shopping_content{
+    background: #FFFFFF;
+    height:1.65rem;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.shopping_picture img{
+    width:1.15rem;
+    height:1.15rem;
+}
+.shopping_picture{
+    padding-bottom: 0.1rem;
+    font-size: 0.12rem;
+}
+.shopping_picture p:nth-child(2){
+    margin-top: 0.095rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.shopping_picture  p:nth-child(3){
+    color: #EF1C00;
+}
+
+/*猜你喜欢*/
+.like{
+    position: relative;
+}
+.like_top{
+    width:3.75rem;
+    height:0.5rem;
+    margin-top:0.055rem; 
+    background:#FFFFFF url(./like.png) no-repeat ;
+    background-size: 0.25rem;
+    background-position: 0.12rem,0.1rem,0.125rem ,2.4rem;
+    display: flex;
+}
+.like_font{
+    flex-grow:1;
+}
+.like_font1{
+    height:0.14rem;
+    font-size:0.14rem;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    margin-left: 0.45rem;
+    margin-top: 0.1rem;
+}
+.like_font2{
+    height:0.09rem;
+    font-size:0.09rem;
+    color:rgba(153,153,153,1);
+    margin-left:0.45rem;
+    margin-top:0.075rem;
+}
+.like_arrow{
+    border:0.01rem solid  #666666 ;
+    width: 0.09rem;
+    height:0.09rem;
+    border-left: transparent;
+    border-bottom: transparent;
+    transform: rotate(45deg);
+    margin-top:0.2rem;
+    margin-right:0.1rem;
+}
+.like_content{
+    background: #FFFFFF;
+    height:2.25rem;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.like_picture img{
+    width:1.75rem;
+    height:1.75rem;
+}
+.like_picture{
+    padding-bottom: 0.1rem;
+    font-size: 0.12rem;
+}
+.like_picture p:nth-child(2){
+    margin-top:0.095rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.like_picture  p:nth-child(3){
+    color: #EF1C00;
+}
+.like_picture  p:nth-child(3)::after{
+    content:'已售20';
+    color:#999999;
+    padding-left:1.05rem;
+}
+.like_content2{
+    background: #FFFFFF;
+    height:2.25rem;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.like_picture2 img{
+    width:1.75rem;
+    height:1.75rem;
+}
+.like_picture2{
+    padding-bottom: 0.1rem;
+    font-size: 0.12rem;
+}
+.like_picture2{
+    margin-top:0.095rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/*footer*/
+#footer{
+    background-color: #FFFFFF;
+    display:flex;
+    justify-content: space-between;
+    font-size: 0.08rem;/*更改font-size改变他自定义的*/
+    padding: 0.07rem 0.2rem;
+    border:0.005rem solid rgba(221,221,221,1);
+}   
+.footer_list{
+    color: #999999;
+}
+.footer_list img{
+    width:0.2rem;
+    height:0.2rem;
+}
+.footer_list p{
+    font-size:0.1rem;
+    text-align: center;/*固定之后，字就不会乱走*/
+}
+.footer_list:first-child{
+    color: #EF1C00;
+  }

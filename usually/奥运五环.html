@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .containt>p{
+        width:200px;
+        height: 200px;
+        border:10px solid black ;
+        border-radius: 50%;
+        position:absolute;
+      }
+      .containt>p::after{
+          content:'';
+          width:200px;
+          height: 200px;
+          border-radius: 50%;
+          position:absolute;
+    }
+      #blue{
+          top:0px;
+          left:0px;
+          border:10px solid blue;
+         
+      }
+      #blue::after{
+          top:-10px;
+          left:-10px;
+          border:10px solid blue;
+          border-bottom-color: transparent;
+          z-index:1;
+      }
+      #black{
+          top:0px;
+          left:230px;
+          border:10px solid black;
+      }
+      #black::after{
+          top:-10px;
+          left:-10px;/*相对于black的定位 因为前面给after的定位是absolute*/
+          border:10px solid black;
+          z-index:1;/*优先级为1*/
+          border-left-color: transparent;
+      }
+      #red{
+          top:0px;
+          left:460px;
+          border:10px solid red;
+      }
+      #red::after{
+          top:-10px;
+          left:-10px;/*相对于red的定位 因为前面给after的定位是absolute*/
+          border:10px solid red;
+          z-index:1;/*优先级为1*/
+          border-left-color: transparent;
+      }
+      #orange{
+          top:110px;
+          left:110px;
+          border:10px solid orangered;
+      }
+
+      #green{
+          top:110px;
+          left:360px;
+          border:10px solid green;
+      }
+      #green::after{
+          top:-10px;
+          left:-10px;/*相对于red的定位 因为前面给after的定位是absolute*/
+          border:10px solid green;
+          z-index:1;/*优先级为1*/
+          border-top-color: transparent;
+          border-right-color: transparent;
+      }
+</style>
+<body>
+<div class='containt'>
+    <p id='blue'></p>
+    <p id='black'></p>
+    <p id='red'></p>
+    <p id='orange'></p>
+    <p  id='green'></p>
+</div>
+</body>
+</html>

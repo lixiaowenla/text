@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .containt{
+        height:300px;
+        width:300px;
+        border:1px solid red;
+        margin:100px auto;
+    }
+    .containt span{
+        float:right;
+    }
+    .arrow{
+        border-bottom:1px solid black;
+    }
+
+</style>
+<body>
+    <div id='app'>
+        <button @click='show3()'>{{denglu}}</button>
+        <button @click='show4()'>{{regster}}</button>
+        <denglu :title='denglu' v-show="show1"  @hide='close()'></denglu>
+        <regster :title='regster' v-show="show2"  @hide='close()'>
+        <p>确认登陆 <input type="text"></p>
+        </regster>
+        
+
+    </div>
+
+    <template id='login'>
+        <div class='containt'>
+            <p>{{title}}<span  @click='$emit("hide")'>X</span></p>
+            <div class='arrow'></div>
+            <p> 用户名 <input type="text"></p>
+            <p> 密码 <input type="text"></p>
+            <button>{{title}}</button>
+        </div>
+        
+</template>
+    
+    <template id='regster'>
+            <div class='containt'>
+                    <p>{{title}}<span  @click='$emit("hide")'>X</span></p>
+                    <div class='arrow'></div>
+                    <p> 用户名 <input type="text"></p>
+                    <p> 密码 <input type="text"></p>
+                    <slot></slot>
+                    <button>{{title}}</button>
+                </div>
+    
+    
+    </template>
+
+
+
+
+    <script src=./vue.js></script>
+    <script>
+    
+
+    
+    
+    new Vue({
+        el:'#app',
+        data:{
+            denglu:'登陆',
+            regster:'注册',
+            show1:false,
+            show2:false
+        },
+        components:{
+        'denglu':{
+         template:'#login',
+         props:['title']
+                
+        },
+        'regster':{
+            template:'#regster',
+             props:['title']
+        }
+      
+    },
+    methods:{
+        show3(){
+            this.show1=true,
+            this.show2=false
+        },
+        show4(){
+             this.show1=false,
+            this.show2=true
+        }
+    },
+
+    close(){
+            this.show1=false,
+            this.show2=false
+    }
+
+
+
+
+    })
+    
+    
+    </script>
+</body>
+</html>

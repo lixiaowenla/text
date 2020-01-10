@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //选择排序的应用
+        function fn(arr){
+            arr=arr.filter((item)=>item>0);//filter过滤数组过滤出大于0的数
+            for(let i=0;i<arr.length;i++){
+                let min=i;
+                for(let j=i+1;j<arr.length;j++){
+                    if(arr[min]>arr[j]){
+                        min=j;
+                    }   
+                }
+                [arr[min],arr[i]]=[arr[i],arr[min]]
+           //判断是不是缺失正数
+           if(arr[i]!==i+1){
+               return i+1;
+           }
+        }
+        //如果没有走上面的，那就是在最后一个数加一 1234 则缺失的第一个正整数就是5 4+1
+            return arr.pop()+1;
+        }    
+          
+        console.log(fn([-1,2,3,4]));
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/*头部*/
+header{
+    width:100%;
+    height: 1.3rem;
+    background: #FFFFFF;
+    display: flex;
+}
+header p{
+    width:0.16rem;
+    height:0.16rem;
+    border: 0.01rem solid #666666;
+    border-top:transparent;
+    border-right:transparent;
+    transform: rotate(45deg); 
+    margin-left:0.2rem;
+    margin-top:0.73rem;
+}
+header span{
+    font-size:0.28rem;
+    padding-top:0.7rem;
+    margin:0 auto; /*span为行内元素,是因为display的原因使行内元素转换为块级元素了吗？？？？？ */
+}
+
+/*红色背景*/
+.bg{
+    width:100%;
+    height:3.3rem;
+    background: url(./bg2.png) no-repeat center;
+    background-size: contain;
+}
+.bg_font{
+    color:#FFFFFF;
+    font-size:0.48rem;
+    padding-top:0.66rem;
+    text-align:center;
+}
+.bg_font::after{
+content: '积分';     
+    font-size:0.24rem;
+    margin-left:0.1rem;
+}
+
+.coupon{
+    width:7.1rem;
+    height:2.8rem;
+    background: #FFFFFF;
+    margin-top:0.67rem;
+    margin-left:0.2rem;
+}
+/* .coupon_img{
+    background: url('./detial.png') no-repeat center;
+    
+    background-position:  0.18rem 0.2rem;
+    width:6.7rem 1.7rem;
+} */
+.coupon_header{
+    font-size: 0.28rem;
+    color: #333333;
+    padding-top:0.31rem;
+    padding-left:0.19rem;
+    position: relative;
+}
+.coupon_header::after{
+    content:'查看已兑换的券';
+    color:#999999;
+    font-size:0.24rem;
+    position: absolute;
+    right:0.49rem;
+    top:0.32rem;
+}
+
+.coupon p{
+    width:0.16rem;
+    height:0.16rem;
+    border:0.01rem solid #999999;
+    border-left: transparent;
+    border-bottom: transparent;
+    transform: rotate(45deg);
+    float:right;
+    margin-top:-0.32rem;
+    margin-right: 0.20rem;
+}
+
+/* .coupon_img>img{
+    width:6.7rem;
+    height:1.7rem;  
+    margin-top:0.2rem;
+    margin-left:0.2rem;
+} */
+
+.coupon_font{
+    display:flex;
+    background:url('./detial.png') no-repeat center;
+    background-size:6.7rem 1.7rem;
+    width:6.7rem;
+    height:1.7rem;
+    margin-top:0.2rem;
+    margin-left:0.2rem;
+}
+.coupon_icon1{
+    color:#EF1C00;
+    font-size:0.24rem;
+    margin-top:0.55rem;
+    margin-left:0.35rem;
+}
+ .coupon_price1{
+    color:#EF1C00;
+    content:'30';
+    font-size:0.60rem;
+    margin-top:0.52rem;
+} 
+.coupon_introduce{
+    font-size:0.24rem;
+    margin-top:0.39rem;
+    margin-left:0.47rem;
+}
+.introduce1{
+  color:#333333;
+}
+.introduce2{
+    color:#999999;
+}
+.coupon_icon2{
+    color:#333333;
+    font-size:0.24rem;
+    margin-left:1.8rem;
+    margin-top:0.31rem;
+}
+.coupon_price2{
+    color:#333333;
+    font-size:0.6rem;
+    margin-left:2rem;
+    margin-top:-0.36rem;
+    line-height:0.6rem;
+}
+.coupon_button{
+    width:1.5rem;
+    height:0.4rem;
+    border-radius:0.2rem;
+    background:#EF1C00;
+    font-size:0.24rem;
+    color:#FFFEFE;
+    margin-left:1.5rem;
+    margin-top:-1.5rem;
+}
+
+
+/* 积分明细 */
+.detail{
+    width:7.1rem;
+    height:8.7rem;
+    background:#FFFFFF;
+    margin-top:0.2rem;
+    margin-left:0.2rem;
+}
+.detail_header{
+    font-size:0.28rem;
+    color:#333333;
+    padding-top:0.31rem;
+    padding-left:0.2rem;
+}
+.detail_choose{
+    display:flex;
+    justify-content : space-between;
+    font-size:0.24rem;
+    color:#333333;
+    margin-left:0.77rem;
+    margin-right:0.77rem;
+    margin-top:0.32rem;
+}
+.detail_bottom{
+    width:1.2rem;
+    height:0.1rem;
+    border: 0.02rem solid #EF1C00;
+    border-bottom:transparent;
+    border-left:transparent;
+    border-right:transparent;
+    margin-left:-0.37rem;
+    margin-top:0.35rem;
+}
+
+.income1{
+    font-size:0.24rem;
+    color:#333333;
+    margin-top:0.31rem;
+    margin-left:0.2rem;
+}
+.income2{
+    font-size:0.2rem;
+    color:#999999;
+    margin-top:0.18rem;
+    margin-left:0.2rem;
+}
+.income3{
+    font-size:0.24rem;
+    color:#F12100;
+    float: right;
+    margin-top:-0.6rem;
+    margin-right:0.21rem;
+}
+.example_bottom{
+    width:6.8rem;
+    height:0.2rem;
+    border:0.01rem solid #DDDDDD;
+    border-bottom:transparent;
+    border-left:transparent;
+    border-right:transparent;
+    margin-left:0.2rem;
+    margin-top:0.28rem; 
+}
+.income4{
+    font-size:0.24rem;
+    color:#666666;
+    float: right;
+    margin-top:-0.6rem;
+    margin-right:0.21rem; 
+}

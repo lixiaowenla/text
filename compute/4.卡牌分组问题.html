@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn(arr){
+            
+        // }
+        // //公约数问题
+        // function gcb(a,b){
+        //     if(b==0){
+        //         return a;
+        //     }else{
+        //         return gcb(b,a%b);
+        //     }
+        // }    
+        // console.log(gcb(4,6));
+
+        
+
+        function fn(arr){
+        let s = arr.sort().join("");//1122333344  排序，将数组转换为字符串
+       // console.log(s);
+        let group = s.match(/(\d)\1+|\d/g);//["00"]  匹配含有相同数字的  
+        while (group.length>1){
+            let i = group[0].length;
+            let j = group[1].length;
+            let k = gcd(i,j); 
+            group.splice(0,2,"0".repeat(k));//将0替换为两个数组，然后再对比，找数组长度的最大公约数
+        }
+        return group[0].length > 1;
+    }
+    function gcd(a,b){
+        if(b==0){
+            return a;
+        }else{
+            return gcd(b,a%b);
+        }
+    }
+    console.log(fn([1,2,3,4,4,3,2,1]));
+    </script>
+</body>
+</html>

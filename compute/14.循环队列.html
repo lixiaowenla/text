@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      class MycircularQueue{
+          constructor(k){
+              this.list=new Array(k);//一个k长的数组
+              this.front=0;
+              this.rear=0;
+              this.max=k;//队列最大长度
+          }
+          //插入数据到队列中
+          enQueue(value){
+            if(this.isFull()){
+                return false;
+            }
+            this.list[this.rear]=value;
+            this.rear=(this.rear+1)%this.max;//边界处理问题 如果队列到了最后一个 5%5 余数为0 回到对首
+            return true;
+          }
+          //删除数据
+          deQueue(){
+              if(this.isEmpty()){
+                return false;
+                
+              }
+              this.list.splice(this.font,1,undefined);
+              this.front=(this.front+1)%this.max;
+              return true;
+          }
+          //获取对首元素
+          Front(){
+              if(this.isEmpty()){
+                return -1;
+              }
+              return this.list[this.front];
+          }
+          //获取队尾元素
+          Rear(){
+              if(this.isFull()){
+              return -1;
+          }
+            return this.rear>0?this.list[this.rear-1]:this.list[this.max-1];
+        }
+        //检查队列是否是满
+          isFull(){
+              return this.front===this.rear&& !!this.list[this.front];
+              
+          }
+          //检查队列是否为空
+          isEmpty(){
+              return this.front===this.rear && !this.list[this.front];
+          }
+      }  
+        
+   //测试
+    let circularQueue = new MycircularQueue(3); // 设置长度为 3
+    console.log(circularQueue.enQueue(1));  // 返回 true
+    console.log(circularQueue.enQueue(2));  // 返回 true
+    console.log(circularQueue.enQueue(3));  // 返回 true
+    console.log(circularQueue.enQueue(4));  // 返回 false，队列已满
+    console.log(circularQueue.Rear());  // 返回 3
+    console.log(circularQueue.isFull());  // 返回 true
+    console.log(circularQueue.deQueue());  // 返回 true
+    console.log(circularQueue.enQueue(4));  // 返回 true
+    console.log(circularQueue.Rear());  // 返回 4
+    </script>
+</body>
+</html>

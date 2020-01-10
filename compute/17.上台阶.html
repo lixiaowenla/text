@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //多次考核 斐波那契数
+    // n 阶台阶 可以选择1 或2 上去 共有多种方法
+    //到10阶台阶的方法 是到9阶和到8阶的方法之和
+    /* //递归解决
+   function fn(n){
+        if(n==1){
+            return 1;
+        }
+        if(n==2){
+            return 2;
+        }
+        return fn(n-1)+fn(n-2);
+   }
+    
+    console.log(fn(4));
+*/    
+
+//非递归解决
+function fn(n){
+    let n1=1;let n2=2;
+    if(n==1){
+        return 1;
+    }
+    if(n==2){
+        return 2;
+    }
+    for(i=2;i<n;i++){
+        let temp=n1+n2;
+        n1=n2;
+        n2=temp;
+    }
+}
+console.log(fn(4));
+        
+    </script>
+</body>
+</html>

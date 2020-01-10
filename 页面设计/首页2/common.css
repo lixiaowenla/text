@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none；
+}
+a{
+    text-decoration: none;
+}
+input{
+    border:none
+}
+body{
+    font-size:0rem;
+    width: 3.75rem;
+    background-color:#FFFFFF;
+}

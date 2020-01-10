@@ -1,0 +1,7 @@
+body{
+    color:red;
+    background: url(./ad.jpg);
+}
+img{
+    transform: rotate(45deg); 
+}

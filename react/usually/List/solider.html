@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+
+    </div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./browser.min.js"></script>
+    <script type="text/babel">
+    
+    class Solider extends React.Component{
+      constructor(props){
+          super(props);
+        this.change=this.change.bind(this) 
+      }
+    change(){
+             console.log(this.props.name);
+            this.props.changeFun1(this.props.name)
+    }
+        render(){
+            return(
+                <div>
+                <h1>将军{this.props.name}有士兵:{this.props.num}</h1>
+                <button onClick={this.change}>调兵</button>
+                </div>
+            )
+        }
+    }
+    class Main extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                total:120,
+                numA:100,
+                numB:80
+            };
+            this.changeFun=this.changeFun.bind(this)
+        }
+        changeFun(tag){
+            console.log('tag',tag);
+            if(tag='A'){
+                if(this.state.total>0){
+            this.setState(
+                {
+                    total:this.state.total-20,
+                    numA:this.state.numA+20,
+                    
+                })
+            } else{ alert('erro')}
+            }
+            if(tag='B'){
+                if(this.state.total>0){
+            this.setState(
+                {
+                    total:this.state.total-20,
+                
+                    numB:this.state.numB+20
+                })
+            } else{ alert('erro')}
+            }
+            
+        }
+     
+        render(){
+            return(
+                <div>
+                <h1>剩余士兵数量{this.state.total}</h1>
+                <Solider name='A' num={this.state.numA} changeFun1={this.changeFun}></Solider>
+                <Solider name='B' num={this.state.numB} changeFun1={this.changeFun}></Solider>
+                </div>
+              
+            )
+        }
+    }
+
+
+    ReactDOM.render(
+        <Main/>,
+        document.getElementById('app')
+    )
+    
+    
+    </script>
+</body>
+</html>

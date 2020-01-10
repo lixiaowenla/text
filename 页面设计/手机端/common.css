@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0；
+}
+li{
+    list-style: none；
+}
+a{
+    text-decoration: none;
+}
+input{
+    border:none
+}
+/*以上四个写css清空原有样式用*/
+body{
+    /*max-width:540px ;*/
+  
+    width: 3.75rem;
+    background-color:#EEEEEE;
+}
+
+

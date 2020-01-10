@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+        <style>
+            .div{
+                display:flex;/*父元素display为flex，变为弹性盒模型，则子元素横向排列*/
+            }
+           .div1{
+               width:500px;
+               height:300px;
+               background-color:yellowgreen;  
+           }
+           .div2{
+               width:100px;
+               height:300px;
+               background-color:brown;
+               flex-grow:1;/*平分除了固定元素之外的空间，占剩余空间一份，他可以自适应*/
+           }
+        
+        
+
+           
+        </style>
+<body>
+    <!--左边固定，右边自适应-->
+    <div class='div'>
+    <div class='div1'></div>
+    <div class='div2'></div>
+    </div>
+
+
+ 
+</body>
+</html>

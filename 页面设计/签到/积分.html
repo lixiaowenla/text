@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./reset.css">
+    <script src='./rem.js'> </script>
+</head>
+
+<body>
+    <div id='app'>
+    
+    <header>
+        <p></p>
+        <span>积分明细</span>
+    </header>
+
+    <div class='bg'>
+        <div class='bg_font'>1000</div>
+        <div class='coupon'>
+           <div class='coupon_header'>积分换券</div>
+                <p></p>
+                <div class='coupon_img'>
+                 <!-- <img src="./detial.png" alt=""> -->
+                <div class='coupon_font'>
+                    <div class='coupon_icon1'>￥</div>
+                    <div class='coupon_price1'>30</div>
+                    <div class='coupon_introduce'>
+                        <div class='introduce1'>30元购物券</div>
+                        <div class='introduce2'>3000积分兑换</div>
+                        <div class='introduce2'>满30.01使用</div>
+                    </div>
+                    <div>
+                    <div class='coupon_icon2'>￥</div>
+                    <div class='coupon_price2'>30</div>
+                    <button class='coupon_button'>立即兑换</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail">
+            <div class='detail_header'>积分明细</div>
+            <div class='detail_choose'>
+                <div >
+                    <div class='detail_choose1'  @click='change1()'>全部</div>
+                    <div class='detail_bottom' v-show='isChoose1'></div>
+                </div>
+                <div>
+                    <div class='detail_choose2'  @click='change2()' >收入</div>
+                    <div class='detail_bottom' v-show='isChoose2'></div>
+                </div>
+                <div>
+                    <div class='detail_choose3'  @click='change3()' >支出</div>
+                    <div class='detail_bottom' v-show='isChoose3'></div>
+                </div>
+            </div>
+            
+            <div class='example'v-for="(item,index) in [...list,...arr]" @click='change1()' v-show='isChoose1'>
+                    <div class='income1'>{{item.income1}}</div>
+                    <div class='income2'>{{item.income2}}</div>
+                    <div class='income3'>{{item.income3}}</div>
+                    <div class='income1'>{{item.pay1}}</div>
+                    <div class='income2'>{{item.pay2}}</div>
+                    <div class='income4'>{{item.pay3}}</div>
+                    <div class='example_bottom'></div>
+            </div>
+            <div class='example'v-for="(item,index) in list" @click='change2()' v-show='isChoose2'>
+                    <div class='income1'>{{item.income1}}</div>
+                    <div class='income2'>{{item.income2}}</div>
+                    <div class='income3'>{{item.income3}}</div>
+                    <div class='example_bottom'></div>
+            </div>
+            <div class='example' v-for="(item,index) in arr" @click='change3()' v-show='isChoose3'>
+                    <div class='income1'>{{item.pay1}}</div>
+                    <div class='income2'>{{item.pay2}}</div>
+                    <div class='income4'>{{item.pay3}}</div>
+                    <div class='example_bottom'></div>
+            </div>
+    </div>
+
+        
+        
+    </div>
+  
+
+</div>
+
+<script src='./vue.js'></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            isChoose1:true,
+            isChoose2:false,
+            isChoose3:false,
+
+         list:[
+               {
+                income1:'签到',
+                income2:'签到送积分2019.07.08',
+                income3:'+10',
+                },
+                {
+                    income1:'签到',
+                    income2:'签到送积分2019.07.07',
+                    income3:'+10',
+                },
+                {
+                    income1:'签到',
+                    income2:'签到送积分2019.07.05',
+                    income3:'+10',
+                },
+                {
+                    income1:'花上声波电动牙刷成人充电软毛美白自动...',
+                    income2:'购物送积分2019.07.05',
+                    income3:'+37',
+                },
+                {
+                    income1:'网红卡通童趣游乐园床裙式四件套儿童少...',
+                    income2:'购物送积分2019.07.05',
+                    income3:'+59',
+                }
+           ],
+           arr:[
+            {
+                pay1:'兑换购物券',
+                pay2:'签到送积分2019.07.08',
+                pay3:'-10',
+            },
+        ]
+           
+        },
+        methods:{
+            change1(){
+                this.isChoose1=true,
+                this.isChoose2=false,
+                this.isChoose3=false
+            },
+            change2(){
+                this.isChoose1=false,
+                this.isChoose2=true,
+                this.isChoose3=false
+            },
+            change3(){
+                this.isChoose1=false,
+                this.isChoose2=false,
+                this.isChoose3=true
+            }
+        }
+    })
+
+
+</script>
+
+</body>
+</html>

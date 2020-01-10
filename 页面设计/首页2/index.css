@@ -1,0 +1,90 @@
+header{
+    height: 0.4rem;
+    width:100%;
+    position: relative;
+    display:flex;
+
+}
+.weichuang{
+        height:0.4rem;
+        background:  url(./icon_weichuang.png) no-repeat ;
+        background-size: 0.3rem;
+        background-position: 0.08rem ,0.37rem;
+        color: #333333;
+        font-weight:600;
+        color:rgba(51,51,51,1);
+}
+
+.weichuang_font1{
+    height:0.09rem;
+    font-size:0.09rem;
+    margin-top: 0.06rem;
+    margin-left: 0.365rem;
+}
+.weichuang_font2{
+    height:0.09rem;
+    font-size:0.06rem;
+    margin-left: 0.365rem;
+}
+.explain_font{
+    font-size:0.09rem;
+    color: #333333;
+    height:0.09rem;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    display: flex;
+}
+.header input{
+    width:1.5rem;
+    height:0.2rem;
+    border:0.005rem solid rgba(221,221,221,1);
+    border-radius:0.1rem;
+    /*默认文字距离文本框距离*/ 
+    padding-left: 0.07rem;
+    font-size: 0.08rem;
+}
+/*input框字体颜色*/ 
+input::-webkit-input-placeholder,  
+textarea::-webkit-input-placeholder {  
+        color:#999999; 
+} 
+.sign_in{
+    height:0.09rem;
+    font-size:0.09rem;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+}
+.ad{
+    height:2.03rem;
+    width: 100%;
+}
+
+
+
+/*核心课程*/
+.importent{
+    position: relative;
+    display: flex;
+    margin-top: 0.14rem;
+} 
+.importent_font1{
+    height:0.15rem;
+    font-size:0.15rem;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+
+}
+.importent_arrow{
+    border:0.001rem solid #0090FF;
+    width: 0.3rem;
+    height:0.3rem;
+    border-left:transparent;
+    border-right: transparent;
+    border-top: transparent;
+}
+.importent_font2{
+    height:0.12rem;
+    font-size:0.12rem;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+}

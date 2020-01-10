@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+      
+    <script>
+        var str="i like computer";
+        function fn(s){
+            return s.split(" ").map((item)=>{
+                return item.split("").reverse().join("");//split 将字符串转化为数组，reverse()反转， join数组转化为字符串
+            }).join(" "); //join() 方法用于把数组中的所有元素放入一个字符串。元素是通过指定的分隔符进行分隔的。
+        }    
+        console.log(fn(str));
+        
+    </script>
+</body>
+</html>
